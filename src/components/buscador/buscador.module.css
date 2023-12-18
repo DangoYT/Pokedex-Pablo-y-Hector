@@ -1,16 +1,33 @@
 .buscador {
     background-color: #DC0A2D;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 24px;
+    /* margin-bottom: 24px; */
 }
 .buscador__container {
-    
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
 }
 
 .buscador__input {
-
+    border-radius: 50px;
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25) inset;
+    width: 280px;
+    height: 32px;
+    border: none;
 }
 
 .buscador__imageContainer {
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 100%;
+    height: 32px;
+    width: 32px;
 }
 
 .buscador__image {

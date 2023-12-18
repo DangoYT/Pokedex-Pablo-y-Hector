@@ -22,7 +22,7 @@ export default function Buscador({ sortBy, onSortChange, value, onChange }) {
   return (
     <div className={stilo.buscador}>
       <div className={stilo.buscador__container}>
-        <input className={stilo.buscador__input} type="search" placeholder="Search Pokémon" value={value} onChange={onChange} />
+        <input className={stilo.buscador__input} type="search" placeholder="        Search Pokémon" value={value} onChange={onChange} />
         <div  className={stilo.buscador__imageContainer}>
           {/* Abrir modal al hacer clic en la imagen */}
           <img

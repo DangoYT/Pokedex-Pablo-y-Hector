@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PokemonCard from '../pokemonCard/PokemonCard';
 import Buscador from '../buscador/Buscador';
-import './listaPokemon.module.css'
+import estilos from './listaPokemon.module.css'
 import Titulo from '../titulo/titulo';
 
 
@@ -80,12 +80,16 @@ function ListaPokemon() {
   const sortedAndFilteredPokemonList = getSortedAndFilteredPokemonList();
 
   return (
-    <div>
+    <div className={estilos.container}>
       <Titulo />
       <Buscador sortBy={sortBy} onSortChange={handleSortChange} value={searchTerm} onChange={handleSearchChange} />
-      {sortedAndFilteredPokemonList.map((pokemon) => (
-        <PokemonCard key={pokemon.id} pokemon={pokemon} resultados={resultados} />
-      ))}
+      <div className={estilos.containerPokemonList}>
+        <div className={estilos.pokemonList}>
+          {sortedAndFilteredPokemonList.map((pokemon) => (
+            <PokemonCard key={pokemon.id} pokemon={pokemon} resultados={resultados} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

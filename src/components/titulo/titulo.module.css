@@ -1,11 +1,28 @@
-.titulo {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600;700&family=Space+Grotesk:wght@500&display=swap');
+
+.container {
+  display: flex;
+  justify-content: center;
   background-color: #dc0a2d;
+  padding: 12px 0px 8px 0px;
+}
+
+.titulo {
   display: flex;
   align-items: center;
   gap: 16px;
   align-self: stretch;
+  width: 328px;
+  height: 32px;
+  /* border: 1px solid black; */
 }
 .titulo__h1 {
+  color: white;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
 }
 .titulo__img {
 }
