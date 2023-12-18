@@ -36,7 +36,7 @@ function ListaPokemon() {
               weight: pokemonData.weight,
               abilities: pokemonData.abilities,
               url: pokemon.url,
-              gif: pokemonData.sprites.versions["generation-v"]["black-white"].animated.front_shiny,
+              gif: pokemonData.sprites.versions["generation-v"]["black-white"].animated.front_default,
               imgHd: pokemonData.sprites.other["official-artwork"].front_default
             };
           })
