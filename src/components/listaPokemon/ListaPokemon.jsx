@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PokemonCard from '../pokemonCard/PokemonCard';
 import Buscador from '../buscador/Buscador';
-import estilos from './listaPokemon.module.css'
+import estilos from './listaPokemon.module.css';
 import Titulo from '../titulo/titulo';
-
 
 function ListaPokemon() {
   const [pokemonList, setPokemonList] = useState([]);
@@ -11,12 +10,10 @@ function ListaPokemon() {
   const [searchTerm, setSearchTerm] = useState('');
   const [resultados, setResultados] = useState([]);
 
-
-
   useEffect(() => {
     const fetchPokemonData = async () => {
       try {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=9');
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=27');
         const data = await response.json();
         const results = data.results;
         setResultados(results);
@@ -50,6 +47,11 @@ function ListaPokemon() {
 
     fetchPokemonData();
   }, []);
+
+  const formatearIDPokemon = (id) => {
+    // Añadir ceros a la izquierda para que tenga siempre tres dígitos
+    return `#${String(id).padStart(3, '0')}`;
+  };
 
   const handleSortChange = (value) => {
     setSortBy(value);
@@ -86,7 +88,7 @@ function ListaPokemon() {
       <div className={estilos.containerPokemonList}>
         <div className={estilos.pokemonList}>
           {sortedAndFilteredPokemonList.map((pokemon) => (
-            <PokemonCard key={pokemon.id} pokemon={pokemon} resultados={resultados} />
+            <PokemonCard key={pokemon.id} pokemon={{ ...pokemon, formattedId: formatearIDPokemon(pokemon.id) }} resultados={resultados} />
           ))}
         </div>
       </div>
