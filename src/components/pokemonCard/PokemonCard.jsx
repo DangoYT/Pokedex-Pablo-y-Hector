@@ -15,7 +15,7 @@ export default function PokemonCard({ pokemon, resultados }) {
   return (
     <div className={estilos.card} onClick={() => navegar()}>
       <div className={estilos.id}>
-        <span>{pokemon.id}</span>
+        <span>{pokemon.formattedId}</span>
       </div>
       <div className={estilos.imagecontainer}>
         <img className={estilos.image} src={pokemon.gif} alt="" />
@@ -23,13 +23,7 @@ export default function PokemonCard({ pokemon, resultados }) {
       <div className={estilos.title}>
         <p>{pokemon.name}</p>
       </div>
-
-      {/* <p>{pokemon.url}</p> */}
-      {/*   <p>{pokemon.type}</p>
-      <p>{pokemon.abilities[0].ability.name}</p>
-      <p>{pokemon.abilities[1].ability.name}</p>
-      <p>{pokemon.height}</p>
-      <p>{pokemon.weight}</p> */}
     </div>
   );
 }
+

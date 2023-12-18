@@ -10,7 +10,7 @@
   padding: 24px 12px;
   margin: 4px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 104px 104px 104px;
   gap: 8px;
   border-radius: 8px;
 }

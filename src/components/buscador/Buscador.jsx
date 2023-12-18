@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import stilo from './buscador.module.css';
+import React, { useState } from "react";
+import stilo from "./buscador.module.css";
 
 export default function Buscador({ sortBy, onSortChange, value, onChange }) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -22,8 +22,16 @@ export default function Buscador({ sortBy, onSortChange, value, onChange }) {
   return (
     <div className={stilo.buscador}>
       <div className={stilo.buscador__container}>
-        <input className={stilo.buscador__input} type="search" placeholder="        Search Pokémon" value={value} onChange={onChange} />
-        <div  className={stilo.buscador__imageContainer}>
+        <div className={stilo.buscador__input}>
+          <img src="public/icons/search.svg" alt="" />
+          <input
+            type="search"
+            placeholder="        Search Pokémon"
+            value={value}
+            onChange={onChange}
+          />
+        </div>
+        <div className={stilo.buscador__imageContainer}>
           {/* Abrir modal al hacer clic en la imagen */}
           <img
             className={stilo.buscador__image}
@@ -43,7 +51,7 @@ export default function Buscador({ sortBy, onSortChange, value, onChange }) {
               type="radio"
               name="orderBy"
               value="id"
-              checked={sortBy === 'id'}
+              checked={sortBy === "id"}
               onChange={handleSortChange}
             />
             Ordenar por ID
@@ -54,7 +62,7 @@ export default function Buscador({ sortBy, onSortChange, value, onChange }) {
               type="radio"
               name="orderBy"
               value="nombre"
-              checked={sortBy === 'nombre'}
+              checked={sortBy === "nombre"}
               onChange={handleSortChange}
             />
             Ordenar por Nombre
