@@ -1,0 +1,11 @@
+.titulo {
+  background-color: #dc0a2d;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+}
+.titulo__h1 {
+}
+.titulo__img {
+}
