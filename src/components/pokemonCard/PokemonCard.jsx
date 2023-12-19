@@ -15,13 +15,13 @@ export default function PokemonCard({ pokemon, resultados }) {
   return (
     <div className={estilos.card} onClick={() => navegar()}>
       <div className={estilos.id}>
-        <span>{pokemon.formattedId}</span>
+        <span className={estilos.number}>{pokemon.formattedId}</span>
       </div>
       <div className={estilos.imagecontainer}>
         <img className={estilos.image} src={pokemon.gif} alt="" />
       </div>
       <div className={estilos.title}>
-        <p>{pokemon.name}</p>
+        <p className={estilos.name}>{pokemon.name}</p>
       </div>
     </div>
   );
