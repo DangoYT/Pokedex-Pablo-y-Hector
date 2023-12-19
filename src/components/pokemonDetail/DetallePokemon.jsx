@@ -62,7 +62,7 @@ export default function DetallePokemon() {
       `https://pokeapi.co/api/v2/pokemon-species/${idPokemon}/`
     );
     const data = await response.json();
-    setPokedescription(data.flavor_text_entries[10].flavor_text);
+    setPokedescription(data.flavor_text_entries.filter(entry => entry.language.name === 'en')[0].flavor_text);
   };
 
   useEffect(() => {

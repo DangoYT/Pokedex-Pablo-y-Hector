@@ -26,7 +26,7 @@ export default function Buscador({ sortBy, onSortChange, value, onChange }) {
           <img src="public/icons/search.svg" alt="" />
           <input
             type="search"
-            placeholder="        Search Pokémon"
+            placeholder="Search Pokémon"
             value={value}
             onChange={onChange}
           />
