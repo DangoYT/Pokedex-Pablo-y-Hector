@@ -10,6 +10,7 @@ const Buscador = ({ sortBy, onSortChange, value, onChange, setValue }) => {
 
   const handleSortChange = (event) => {
     onSortChange(event.target.value);
+    setModalOpen(!modalOpen);
   };
 
   const handleModalSubmit = () => {
