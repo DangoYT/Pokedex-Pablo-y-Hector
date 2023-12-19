@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import stilo from "./buscador.module.css";
 
-export default function Buscador({ sortBy, onSortChange, value, onChange }) {
+const Buscador = ({ sortBy, onSortChange, value, onChange, setValue }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleModalToggle = () => {
@@ -13,26 +13,43 @@ export default function Buscador({ sortBy, onSortChange, value, onChange }) {
   };
 
   const handleModalSubmit = () => {
-    // Aquí puedes realizar acciones adicionales al enviar el formulario dentro del modal
-    // Por ejemplo, puedes enviar los valores a través de una función prop o realizar otra lógica
-    // También puedes cerrar el modal aquí si es necesario
     setModalOpen(false);
+  };
+
+  const handleClearSearch = () => {
+    // Limpiar el estado interno del componente y el campo de búsqueda
+    setModalOpen(false);
+    setValue("");
+    console.log(onChange);
   };
 
   return (
     <div className={stilo.buscador}>
       <div className={stilo.buscador__container}>
         <div className={stilo.buscador__input}>
-          <img src="public/icons/search.svg" alt="" />
+          <img
+            className={stilo.buscador__lupa}
+            src="public/icons/search.svg"
+            alt=""
+          />
           <input
-            type="search"
-            placeholder="Search Pokémon"
+          id="search"
+            className={stilo.buscador__inputText}
+            type="text"
+            placeholder="Search"
             value={value}
             onChange={onChange}
           />
+          {value && ( // Mostrar el elemento buscador__close solo si el campo de búsqueda no está vacío
+            <img
+              className={stilo.buscador__close}
+              src="public/icons/close.svg"
+              alt=""
+              onClick={handleClearSearch}
+            />
+          )}
         </div>
         <div className={stilo.buscador__imageContainer}>
-          {/* Abrir modal al hacer clic en la imagen */}
           <img
             className={stilo.buscador__image}
             src="public/icons/sort.svg"
@@ -42,7 +59,6 @@ export default function Buscador({ sortBy, onSortChange, value, onChange }) {
         </div>
       </div>
 
-      {/* Modal */}
       {modalOpen && (
         <div className={stilo.modal}>
           <label>
@@ -72,3 +88,5 @@ export default function Buscador({ sortBy, onSortChange, value, onChange }) {
     </div>
   );
 }
+
+export default Buscador;

@@ -84,7 +84,7 @@ function ListaPokemon() {
   return (
     <div className={estilos.container}>
       <Titulo />
-      <Buscador sortBy={sortBy} onSortChange={handleSortChange} value={searchTerm} onChange={handleSearchChange} />
+      <Buscador sortBy={sortBy} onSortChange={handleSortChange} value={searchTerm} setValue={setSearchTerm} onChange={handleSearchChange} />
       <div className={estilos.containerPokemonList}>
         <div className={estilos.pokemonList}>
           {sortedAndFilteredPokemonList.map((pokemon) => (
