@@ -18,7 +18,6 @@ const Buscador = ({ sortBy, onSortChange, value, onChange, setValue }) => {
   };
 
   const handleClearSearch = () => {
-    // Limpiar el estado interno del componente y el campo de búsqueda
     setModalOpen(false);
     setValue("");
     console.log(onChange);
@@ -41,7 +40,7 @@ const Buscador = ({ sortBy, onSortChange, value, onChange, setValue }) => {
             value={value}
             onChange={onChange}
           />
-          {value && ( // Mostrar el elemento buscador__close solo si el campo de búsqueda no está vacío
+          {value && (
             <img
               className={stilo.buscador__close}
               src="public/icons/close.svg"
