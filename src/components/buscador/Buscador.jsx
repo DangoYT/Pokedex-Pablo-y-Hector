@@ -34,7 +34,7 @@ const Buscador = ({ sortBy, onSortChange, value, onChange, setValue }) => {
             alt=""
           />
           <input
-          id="search"
+            id="search"
             className={stilo.buscador__inputText}
             type="text"
             placeholder="Search"
@@ -62,32 +62,35 @@ const Buscador = ({ sortBy, onSortChange, value, onChange, setValue }) => {
 
       {modalOpen && (
         <div className={stilo.modal}>
-          <label>
-            <input
-              className={stilo.modal__input1}
-              type="radio"
-              name="orderBy"
-              value="id"
-              checked={sortBy === "id"}
-              onChange={handleSortChange}
-            />
-            Ordenar por ID
-          </label>
-          <label>
-            <input
-              className={stilo.modal__input2}
-              type="radio"
-              name="orderBy"
-              value="nombre"
-              checked={sortBy === "nombre"}
-              onChange={handleSortChange}
-            />
-            Ordenar por Nombre
-          </label>
+          <div className={stilo.modal__title}>Sort by: </div>
+          <div className={stilo.modal__container}>
+            <label className={stilo.modal__label}>
+              <input
+                className={stilo.modal__input1}
+                type="radio"
+                name="orderBy"
+                value="id"
+                checked={sortBy === "id"}
+                onChange={handleSortChange}
+              />
+              Number
+            </label>
+            <label className={stilo.modal__label}>
+              <input
+                className={stilo.modal__input2}
+                type="radio"
+                name="orderBy"
+                value="nombre"
+                checked={sortBy === "nombre"}
+                onChange={handleSortChange}
+              />
+              Name
+            </label>
+          </div>
         </div>
       )}
     </div>
   );
-}
+};
 
 export default Buscador;
