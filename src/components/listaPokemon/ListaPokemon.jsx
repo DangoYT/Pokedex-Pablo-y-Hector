@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PokemonCard from '../pokemonCard/PokemonCard';
 import Buscador from '../buscador/Buscador';
 import estilos from './listaPokemon.module.css';
-import Titulo from '../titulo/titulo';
+import Titulo from '../titulo/Titulo';
 
 function ListaPokemon() {
   const [pokemonList, setPokemonList] = useState([]);
