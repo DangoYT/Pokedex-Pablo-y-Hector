@@ -1,184 +1,265 @@
-.normal{
-    background-color: #AAA67F;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600;700&family=Space+Grotesk:wght@500&display=swap");
+.normal {
+  background-color: #aaa67f;
+  color: #aaa67f;
 }
 
-.fighting{
-    background-color: #C12239;
+.fighting {
+  background-color: #c12239;
+  color: #c12239;
 }
 
-.flying{
-    background-color: #A891EC; 
+.flying {
+  background-color: #a891ec;
+  color: #a891ec;
 }
 
-.ground{
-    background-color: #DEC16B;
+.ground {
+  background-color: #dec16b;
+  color: #dec16b;
 }
-.poison{
-    background-color: #A43E9E;
-}
-
-.rock{
-    background-color: #B69E31;
+.poison {
+  background-color: #a43e9e;
+  color: #a43e9e;
 }
 
-.bug{
-    background-color: #A7B723;
+.rock {
+  background-color: #b69e31;
+  color: #b69e31;
 }
 
-.ghost{
-    background-color: #70559B;
+.bug {
+  background-color: #a7b723;
+  color: #a7b723;
 }
 
-.steel{
-    background-color: #B7B9D0;
+.ghost {
+  background-color: #70559b;
+  color: #70559b;
 }
 
-.fire{
-    background-color: #F57D31;
+.steel {
+  background-color: #b7b9d0;
+  color: #b7b9d0;
 }
 
-.water{
-    background-color: #6493EB;
+.fire {
+  background-color: #f57d31;
+  color: #f57d31;
 }
 
-.grass{
-    background-color: #74CB48;
+.water {
+  background-color: #6493eb;
+  color: #6493eb;
 }
 
-.ice{
-    background-color: #9AD6DF;
+.grass {
+  background-color: #74cb48;
+  color: #74cb48;
 }
 
-.electric{
-    background-color: #F9CF30;
+.ice {
+  background-color: #9ad6df;
+  color: #9ad6df;
 }
 
-.psychic{
-    background-color: #FB5584;
+.electric {
+  background-color: #f9cf30;
+  color: #f9cf30;
 }
 
-.dragon{
-    background-color: #7037FF;
-
-}
-.dark{
-    background-color: #75574C;
+.psychic {
+  background-color: #fb5584;
+  color: #fb5584;
 }
 
-.fairy{
-    background-color:#E69EAC;
+.dragon {
+  background-color: #7037ff;
+  color: #7037ff;
+}
+.dark {
+  background-color: #75574c;
+  color: #75574c;
 }
 
-
+.fairy {
+  background-color: #e69eac;
+  color: #e69eac;
+}
 
 .container {
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .arrow_left {
-
+  display: none;
 }
 
 .arrow_right {
+  display: none;
+}
 
+.header {
+  display: flex;
+  padding: 20px 20px 24px 20px;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
 }
 
 .arrow_back {
-
 }
 
 .title {
-
+  text-transform: capitalize;
+  font-family: Poppins;
+  color: white;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 133.333% */
+  width: 230px;
+  height: 32px;
 }
 
 .id {
-
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  color: #fff;
 }
 
 .image_container {
-
 }
 
 .image {
-    display: flex;
-    width: 200px;
-    height: 200px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
 }
 
 .gift {
+}
 
+.content {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 97%;
+  border-radius: 8px;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25) inset;
+  border: none;
 }
 
 .types {
-
 }
 
 .type_p {
-
 }
 
 .h2 {
-
 }
 
 .aboutContainer {
-
+  border: 1px solid black;
+  display: flex;
 }
 
 .heightContainer {
+  border: 1px solid black;
+  width: 103px;
+  height: 48px;
+}
 
+.heightTitle {
+    color: #666666;
 }
 
 .height {
-
+  color: #1d1d1d;
 }
 
 .weightContainer {
+  border: 1px solid black;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  width: 103px;
+  height: 48px;
+}
+.weightIcon {
+    height: 16px;
+    width: 16px;
+}
 
+.weightTitle {
+  color: #666666;
 }
 
 .weight {
-
+  color: #1d1d1d;
 }
 
 .abilitiesContainer {
-
+  border: 1px solid black;
+  width: 103px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  align-items: center;
 }
 
 .abilities {
-
+  color: #1d1d1d;
+  text-transform: capitalize;
+  font-family: poppins;
+  font-size: 12px;
 }
 
 .description {
-
+  color: #1d1d1d;
 }
 
 .h3 {
-
 }
 
 .statsContainer {
-
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  align-self: stretch;
 }
 
 .statsTitle {
-
+  border-right: 1px solid #e0e0e0;
+  font-family: poppins;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: end;
+  width: 50px;
 }
 
 .statsValue {
-
 }
 
 .stats {
-
+  color: #1d1d1d;
 }
 
 .statsRange {
-
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
 }
 
 .range {
-
 }

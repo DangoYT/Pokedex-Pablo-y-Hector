@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable'
 import estilos from './detallePokemon.module.css'
+import Slider from '../inputRange/Slider';
+
 
 export default function DetallePokemon() {
 
@@ -64,6 +66,7 @@ export default function DetallePokemon() {
     const data = await response.json();
     setPokedescription(data.flavor_text_entries.filter(entry => entry.language.name === 'en')[0].flavor_text);
   };
+  const typeUno = estilos[poketype.types?.[0]?.type.name || 'default'];
 
   useEffect(() => {
     const pokeApiUnica = `https://pokeapi.co/api/v2/pokemon-species/${idPokemon}/`;
@@ -78,15 +81,22 @@ export default function DetallePokemon() {
         console.error('Error fetching Pokémon data:', error);
       }
     };
-
     obtenerTipo();
     obternerDescripcion();
     fetchData();
   }, [idPokemon]);
 
+  const formatearIDPokemon = (id) => {
+    // Añadir ceros a la izquierda para que tenga siempre tres dígitos
+    return `#${String(id).padStart(3, '0')}`;
+  };
+
+  const formattedId = formatearIDPokemon(pokemonInfo?.id || 0);
+
+  const [max, setMax] = useState(255);
 
   return (
-    <div {...handlers} className={estilos.container} >
+    <div {...handlers} className={`${typeUno} ${estilos.container}`} >
       <div>
         <img className={estilos.arrow_left} src="./public/icons/chevron_left.svg" alt="" onClick={decreasePkId} />
       </div>
@@ -96,10 +106,10 @@ export default function DetallePokemon() {
 
       {pokemonInfo ? (
         <>
-          <div>
+          <div className={estilos.header}>
             <img className={estilos.arrow_back} src="./public/icons/arrow_back.svg" alt="" onClick={navegarAtras} />
             <p className={estilos.title}>{pokemonInfo.name}</p>
-            <span className={estilos.id}>{pokemonInfo.id}</span>
+            <span className={estilos.id}>{formattedId}</span>
           </div>
           <div className={estilos.image_container}>
             <div>
@@ -109,55 +119,62 @@ export default function DetallePokemon() {
               <img className={estilos.gift} src={poketype.sprites.versions["generation-v"]["black-white"].animated.front_shiny} alt="" />
             </div>
           </div>
-          <div className={estilos.types}>
-            {poketype.types.map((type, index) => (
-              <p className={estilos.type_p} key={index}>{type.type.name}</p>
-            ))}
-          </div>
-          <h2 className={estilos.h2}>About</h2>
-          <div className={estilos.aboutContainer}>
-            <div className={estilos.heightContainer}>
-              <p className={estilos.height}>{poketype.height}</p>
-            </div>
-            <div className={estilos.weightContainer}>
-              <p className={estilos.weight}>{poketype.weight}</p>
-            </div>
-            <div className={estilos.abilitiesContainer}>
-              {poketype.abilities.map((ability, index) => (
-                <p className={estilos.abilities} key={index}>{ability.ability.name}</p>
-              ))}
-            </div>
-          </div>
 
-          <p className={estilos.description}>{pokedescription}</p>
+          <div className={estilos.content}>
+            <div className={estilos.types}>
+              {poketype.types.map((type, index) => (
+                <p className={estilos.type_p} key={index}>{type.type.name}</p>
+              ))}
+            </div>
+            <h2 className={estilos.h2}>About</h2>
+            <div className={estilos.aboutContainer}>
+              <div className={estilos.weightContainer}>
+                <img src="public/icons/weight.svg" alt="" className={estilos.weightIcon} />
+                <p className={estilos.weightTitle}>Weight</p>
+                <p className={estilos.weight}>{poketype.weight}</p>
+              </div>
+              <div className={estilos.heightContainer}>
+                <p className={estilos.heightTitle}>Height</p>
+                <p className={estilos.height}>{poketype.height}</p>
+              </div>
+              <div className={estilos.abilitiesContainer}>
+                {poketype.abilities.map((ability, index) => (
+                  <p className={estilos.abilities} key={index}>{ability.ability.name}</p>
+                ))}
+              </div>
+            </div>
 
-          <h3 className={estilos.h3}>Base Stats</h3>
-          <div className={estilos.statsContainer}>
-            <div className={estilos.statsTitle}>
-              <p>HP</p>
-              <p>ATK</p>
-              <p>DEF</p>
-              <p>SATK</p>
-              <p>SDEF</p>
-              <p>SPD</p>
-            </div>
-            <div className={estilos.statsValue}>
-              {poketype.stats.map((stat, index) => (
-                <p className={estilos.stats} key={index}>{stat.base_stat}</p>
-              ))}
-            </div>
-            <div className={estilos.statsRange}>
-              {poketype.stats.map((stat, index) => (
-                <input
-                  className={estilos.range}
-                  key={index}
-                  type="range"
-                  min="0"
-                  max="255"
-                  value={stat.base_stat}
-                  readOnly
-                />
-              ))}
+            <p className={estilos.description}>{pokedescription}</p>
+
+            <h3 className={estilos.h3}>Base Stats</h3>
+            <div className={estilos.statsContainer}>
+              <div className={estilos.statsTitle}>
+                <p>HP</p>
+                <p>ATK</p>
+                <p>DEF</p>
+                <p>SATK</p>
+                <p>SDEF</p>
+                <p>SPD</p>
+              </div>
+              <div className={estilos.statsValue}>
+                {poketype.stats.map((stat, index) => (
+                  <p className={estilos.stats} key={index}>{stat.base_stat}</p>
+                ))}
+              </div>
+
+              <div className={estilos.statsRange}>
+                {poketype.stats.map((stat, index) => (
+                  <Slider
+                    className={estilos.range}
+                    key={index}
+                    type="range"
+                    min="0"
+                    max={max}
+                    value={stat.base_stat}
+                    tipoDePokemon={poketype.types[0].type.name}
+                    readOnly />
+                ))}
+              </div>
             </div>
           </div>
 
