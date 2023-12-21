@@ -144,6 +144,7 @@ export default function DetallePokemon() {
                 {poketype.abilities.map((ability, index) => (
                   <p className={estilos.abilities} key={index}>{ability.ability.name}</p>
                 ))}
+                <p className={estilos.abilities_title}>Moves</p>
               </div>
             </div>
             <div className={estilos.descriptionContainer}>

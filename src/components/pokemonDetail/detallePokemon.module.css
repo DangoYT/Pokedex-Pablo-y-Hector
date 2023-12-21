@@ -223,7 +223,9 @@
 .height {
   position: absolute;
   color: #1d1d1d;
+  top: -5px;
   left: 60px;
+  font-family: poppins;
 }
 
 .weightContainer {
@@ -251,8 +253,9 @@
 .weight {
   color: #1d1d1d;
   position: absolute;
-  top: 0px;
+  top: -5px;
   left: 60px;
+  font-family: poppins;
 }
 
 .abilitiesContainer {
@@ -269,6 +272,10 @@
   text-transform: capitalize;
   font-family: poppins;
   font-size: 12px;
+}
+.abilities_title {
+  color: #666666;
+  font-family: poppins;
 }
 
 .descriptionContainer {
@@ -316,12 +323,14 @@
 
 .stats {
   color: #1d1d1d;
+  font-family: poppins;
+  font-size: 12px;
 }
 
 .statsRange {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14.5px;
   margin-top: 4px;
 }
 
