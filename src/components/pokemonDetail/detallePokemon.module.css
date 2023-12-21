@@ -136,9 +136,9 @@
 }
 
 .image_container {
-    position: relative;
-    width: 200px;
-    height: 140px;
+  position: relative;
+  width: 200px;
+  height: 140px;
 }
 
 .image {
@@ -152,9 +152,9 @@
 }
 
 .gift {
-    position: absolute;
-    top: 170px;
-    left: 150px;
+  position: absolute;
+  top: 170px;
+  left: 150px;
 }
 
 .content {
@@ -172,14 +172,20 @@
   padding-top: 60px;
 }
 
+.typesContainer {
+  display: flex;
+  gap: 16px;
+}
+
 .types {
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 2px 8px;
 }
 
 .type_p {
   color: white;
   font-family: poppins;
+  text-transform: capitalize;
 }
 
 .h2 {

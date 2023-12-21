@@ -119,11 +119,13 @@ export default function DetallePokemon() {
               <img className={estilos.gift} src={poketype.sprites.versions["generation-v"]["black-white"].animated.front_shiny} alt="" />
             </div>
           </div>
-
+          `${typeUno} ${estilos.type_p}`
           <div className={estilos.content}>
-            <div className={`${typeUno} ${estilos.types}`}>
+            <div className={estilos.typesContainer}>
               {poketype.types.map((type, index) => (
-                <p className={estilos.type_p} key={index}>{type.type.name}</p>
+                <div className={`${estilos[type.type.name]} ${estilos.types}`} key={type.type.name}>
+                  <p className={estilos.type_p} key={type.type.name}>{type.type.name}</p>
+                </div>
               ))}
             </div>
             <h2 className={estilos.h2}>About</h2>
