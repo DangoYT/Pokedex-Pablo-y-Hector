@@ -9,11 +9,11 @@ const Slider = styled.input.attrs(({ max, tipoDePokemon, ...props }) => ({
   -webkit-appearance: none;
   -moz-appearance: none;
   outline: 0;
-  height: 8px;
-  border-radius: 8px;
+  height: 4px;
+  border: none;
+  border-radius: 4px;
   background: ${(props) =>
     `linear-gradient(to right, ${getColorForType(props.tipoDePokemon)} 0%, ${getColorForType(props.tipoDePokemon)} ${props.value}%, #fff ${props.value}%, #fff 100%);`};
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;

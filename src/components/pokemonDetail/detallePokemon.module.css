@@ -107,6 +107,8 @@
   align-items: center;
   gap: 8px;
   align-self: stretch;
+  max-width: 360px;
+  max-height: 640px;
 }
 
 .arrow_back {
@@ -134,6 +136,9 @@
 }
 
 .image_container {
+    position: relative;
+    width: 200px;
+    height: 140px;
 }
 
 .image {
@@ -142,73 +147,109 @@
   height: 200px;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: -05px;
 }
 
 .gift {
+    position: absolute;
+    top: 170px;
+    left: 150px;
 }
 
 .content {
+  /*  */
   background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 97%;
   border-radius: 8px;
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25) inset;
   border: none;
+  height: 412px;
+  width: 352px;
+  gap: 16px;
+  padding-top: 60px;
 }
 
 .types {
+  border-radius: 10px;
+  padding: 2px 8px;
 }
 
 .type_p {
+  color: white;
+  font-family: poppins;
 }
 
 .h2 {
+  font-family: poppins;
 }
 
 .aboutContainer {
-  border: 1px solid black;
   display: flex;
 }
 
 .heightContainer {
-  border: 1px solid black;
   width: 103px;
   height: 48px;
+  position: relative;
+  border-right: 1px solid #1d1d1d;
+}
+
+.heightIcon {
+  transform: rotate(90deg);
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 0px;
+  left: 20px;
 }
 
 .heightTitle {
-    color: #666666;
+  position: absolute;
+  color: #666666;
+  bottom: 0px;
+  left: 25%;
+  font-family: poppins;
 }
 
 .height {
+  position: absolute;
   color: #1d1d1d;
+  left: 60px;
 }
 
 .weightContainer {
-  border: 1px solid black;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
   width: 103px;
   height: 48px;
+  border-right: 1px solid #1d1d1d;
+  position: relative;
 }
 .weightIcon {
-    height: 16px;
-    width: 16px;
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 0px;
+  left: 20px;
 }
 
 .weightTitle {
   color: #666666;
+  position: absolute;
+  bottom: 0px;
+  left: 25%;
+  font-family: poppins;
 }
 
 .weight {
   color: #1d1d1d;
+  position: absolute;
+  top: 0px;
+  left: 60px;
 }
 
 .abilitiesContainer {
-  border: 1px solid black;
   width: 103px;
   height: 48px;
   display: flex;
@@ -224,11 +265,26 @@
   font-size: 12px;
 }
 
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 312px;
+  text-align: center;
+}
+
 .description {
   color: #1d1d1d;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .h3 {
+  font-family: poppins;
 }
 
 .statsContainer {
@@ -236,6 +292,8 @@
   align-items: flex-start;
   gap: 18px;
   align-self: stretch;
+  height: 96px;
+  width: 312px;
 }
 
 .statsTitle {

@@ -64,7 +64,7 @@ export default function DetallePokemon() {
       `https://pokeapi.co/api/v2/pokemon-species/${idPokemon}/`
     );
     const data = await response.json();
-    setPokedescription(data.flavor_text_entries.filter(entry => entry.language.name === 'en')[0].flavor_text);
+    setPokedescription(data.flavor_text_entries[10].flavor_text);
   };
   const typeUno = estilos[poketype.types?.[0]?.type.name || 'default'];
 
@@ -121,7 +121,7 @@ export default function DetallePokemon() {
           </div>
 
           <div className={estilos.content}>
-            <div className={estilos.types}>
+            <div className={`${typeUno} ${estilos.types}`}>
               {poketype.types.map((type, index) => (
                 <p className={estilos.type_p} key={index}>{type.type.name}</p>
               ))}
@@ -134,6 +134,7 @@ export default function DetallePokemon() {
                 <p className={estilos.weight}>{poketype.weight}</p>
               </div>
               <div className={estilos.heightContainer}>
+                <img src="public/icons/straighten.svg" alt="" className={estilos.heightIcon} />
                 <p className={estilos.heightTitle}>Height</p>
                 <p className={estilos.height}>{poketype.height}</p>
               </div>
@@ -143,9 +144,9 @@ export default function DetallePokemon() {
                 ))}
               </div>
             </div>
-
-            <p className={estilos.description}>{pokedescription}</p>
-
+            <div className={estilos.descriptionContainer}>
+              <p className={estilos.description}>{pokedescription}</p>
+            </div>
             <h3 className={estilos.h3}>Base Stats</h3>
             <div className={estilos.statsContainer}>
               <div className={estilos.statsTitle}>
