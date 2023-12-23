@@ -6,8 +6,8 @@ import Slider from '../inputRange/Slider';
 import flechaIzquierda from  "/public/icons/chevron_left.svg"
 import flechaDerecha from "/public/icons/chevron_right.svg"
 import arrowBack from "/public/icons/arrow_back.svg"
-import weight from "public/icons/weight.svg"
-import height from "public/icons/straighten.svg"
+import weight from "/public/icons/weight.svg"
+import height from "/public/icons/straighten.svg"
 
 
 export default function DetallePokemon() {
