@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600;700&family=Space+Grotesk:wght@500&display=swap");
-@import pokebola from url("/public/icons/pokeball2.svg");
 .normal {
   background-color: #aaa67f;
   color: #aaa67f;
@@ -92,9 +91,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("/public/icons/pokeball2.svg");
-  background-repeat: no-repeat;
-  background-position: right 10px;
 }
 
 .arrow_left {
