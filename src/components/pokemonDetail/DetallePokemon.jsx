@@ -3,6 +3,11 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable'
 import estilos from './detallePokemon.module.css'
 import Slider from '../inputRange/Slider';
+import flechaIzquierda from  "/public/icons/chevron_left.svg"
+import flechaDerecha from "/public/icons/chevron_right.svg"
+import arrowBack from "/public/icons/arrow_back.svg"
+import weight from "public/icons/weight.svg"
+import height from "public/icons/straighten.svg"
 
 
 export default function DetallePokemon() {
@@ -98,16 +103,16 @@ export default function DetallePokemon() {
   return (
     <div {...handlers} className={`${typeUno} ${estilos.container}`} >
       <div>
-        <img className={estilos.arrow_left} src="./public/icons/chevron_left.svg" alt="" onClick={decreasePkId} />
+        <img className={estilos.arrow_left} src={flechaIzquierda} alt="" onClick={decreasePkId} />
       </div>
       <div>
-        <img className={estilos.arrow_right} src="./public/icons/chevron_right.svg" alt="" onClick={increasePkId} />
+        <img className={estilos.arrow_right} src={flechaDerecha} alt="" onClick={increasePkId} />
       </div>
 
       {pokemonInfo ? (
         <>
           <div className={estilos.header}>
-            <img className={estilos.arrow_back} src="./public/icons/arrow_back.svg" alt="" onClick={navegarAtras} />
+            <img className={estilos.arrow_back} src={arrowBack} alt="" onClick={navegarAtras} />
             <p className={estilos.title}>{pokemonInfo.name}</p>
             <span className={estilos.id}>{formattedId}</span>
           </div>
@@ -131,12 +136,12 @@ export default function DetallePokemon() {
             <h2 className={estilos.h2}>About</h2>
             <div className={estilos.aboutContainer}>
               <div className={estilos.weightContainer}>
-                <img src="public/icons/weight.svg" alt="" className={estilos.weightIcon} />
+                <img src={weight} alt="" className={estilos.weightIcon} />
                 <p className={estilos.weightTitle}>Weight</p>
                 <p className={estilos.weight}>{poketype.weight}</p>
               </div>
               <div className={estilos.heightContainer}>
-                <img src="public/icons/straighten.svg" alt="" className={estilos.heightIcon} />
+                <img src={height} alt="" className={estilos.heightIcon} />
                 <p className={estilos.heightTitle}>Height</p>
                 <p className={estilos.height}>{poketype.height}</p>
               </div>

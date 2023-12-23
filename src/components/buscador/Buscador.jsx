@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import stilo from "./buscador.module.css";
-
+import lupa from "/public/icons/search.svg";
+import numeral from "/public/icons/sort.svg";
+import close from "/public/icons/close.svg";
 const Buscador = ({ sortBy, onSortChange, value, onChange, setValue }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -29,7 +31,7 @@ const Buscador = ({ sortBy, onSortChange, value, onChange, setValue }) => {
         <div className={stilo.buscador__input}>
           <img
             className={stilo.buscador__lupa}
-            src="public/icons/search.svg"
+            src={lupa}
             alt=""
           />
           <input
@@ -43,7 +45,7 @@ const Buscador = ({ sortBy, onSortChange, value, onChange, setValue }) => {
           {value && (
             <img
               className={stilo.buscador__close}
-              src="public/icons/close.svg"
+              src={close}
               alt=""
               onClick={handleClearSearch}
             />
@@ -52,7 +54,7 @@ const Buscador = ({ sortBy, onSortChange, value, onChange, setValue }) => {
         <div className={stilo.buscador__imageContainer}>
           <img
             className={stilo.buscador__image}
-            src="public/icons/sort.svg"
+            src={numeral}
             alt="Numeral"
             onClick={handleModalToggle}
           />
