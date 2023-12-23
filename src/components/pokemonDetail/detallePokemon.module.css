@@ -94,11 +94,15 @@
 }
 
 .arrow_left {
-  display: none;
+  position: absolute;
+  left: 10px;
+  top: 200px;
 }
 
 .arrow_right {
-  display: none;
+  position: absolute;
+  top: 200px;
+  right: 10px;
 }
 
 .header {
